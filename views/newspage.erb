@@ -29,28 +29,19 @@
   <body>
     <div class="container">
         <div class="jumbotron text-center">
-            <div class="display-4" style = "font-family: 'Poppins'">The Madison Daily</div>
+            <div class="display-4" style = "font-family: 'Poppins'">The Madison Daily 
+            <i class="far fa-newspaper"></i>
+            </div>
                       
         </div>
-    </div>
-    <div class="container">
-    <hr>
-        <div class = "row">         
-            <div class = "col">
-                <form action="/news">
-                    <input type = "text" name="q">
-                    <button type = "submit">Adjust Your Weather Location</submit>
-                </form>
-            </div>
-        </div>         
     </div>
 
     <div class="container mt-5">
         <hr>
         <h1>Current Weather</h1> <br>
-        <div class = "row">
-            <div class = "col">
-                <p>Temperature: <%=@current_temperature%> </p>
+          <div class="card-fluid">
+            <div class="card-body">
+            <p>Temperature: <%=@current_temperature%> </p>
                 <p>Conditions: <%=@current_summary  %>
                 <% if @icon == "cloudy" %>
                     <i class="fas fa-cloud"></i>
@@ -74,17 +65,20 @@
                     <i class="fas fa-wind"></i>
                 <% end %> </p>
             </div>
+          </div>
         </div>
+
         <hr>
-        <h1>Forecast</h1> <br>
+        <div class="container mt-5">
+        <h1>Weekly Forecast</h1> <br>
         <div class = "row">
                 <div class = "col">
                     <table class="table">
                         <thead>
                             <tr>
-                            <th scope="col">Days Out</th>
-                            <th scope="col">Temperature (High)</th>
-                            <th scope="col">Conditions</th>
+                            <th scope="col-sm">Days Out</th>
+                            <th scope="col-sm">Temperature (High)</th>
+                            <th scope="col-sm">Conditions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -123,19 +117,40 @@
                 
         </div>
         <hr>
+        
         <h1>Business Headlines <%=@date%></h1><br>
         <div class = "row">
             <% @title.zip(@story_url).each do |title, url| %>
                 <div class="card-fluid">
                         <div class="card-body">
                             <h5 class="card-title"><%=title%></h5>
-                            <a href="<%=url%>" class="btn btn-primary">View Article</a>
+                            <a href="<%=url%>" class="btn btn-dark">View Article</a>
                         </div>
                 </div>  
             <% end %>               
         </div>
     </div>
+   
+    <div class="container">
+    <hr>
+        <div class = "row">         
+            <div class = "col">
+                <form action="/news">
+                    <input type = "text" name="q">
+                    <button type = "submit">Adjust Your Weather Location</submit>
+                </form>
+            </div>
+        </div>         
+    </div>
 
-    
+<div class="container">    
+<hr>
+<div class = "row">
+    <div class = "col">
+    <h2> Data sourced from News API and DarkSky API </h2>
+    </div>
+</div>
+</div>
+
   </body>
 </html>

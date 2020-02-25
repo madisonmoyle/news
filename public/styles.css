@@ -1,0 +1,39 @@
+  
+body {
+    font-family: 'Poppins';
+    background-color: rgb(217, 229, 248);
+}
+.card-fluid {
+     background-color: rgb(217, 229, 248);
+}
+
+h1 {
+    color: black;
+    font-size: 58px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 50px;
+    padding-left: 0px;
+    text-align: left;
+    text-shadow: white;
+}
+
+h2 {
+    font-size: 36px;    
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.jumbotron {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(239, 217, 248);
+    color: black;
+    text-shadow: 2px 2px 2px white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 64px;
+  }
